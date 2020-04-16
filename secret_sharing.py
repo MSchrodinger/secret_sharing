@@ -53,8 +53,8 @@ p = [
     13466917,
     20996011,
 ]
-_shares=10
-_thresh_hold=5
+_shares = 10
+_thresh_hold = 5
 
 # Mersenne Prime
 _PRIME = 0
@@ -153,6 +153,7 @@ def recover_secret(shares):
     prime = _PRIME
     if len(shares) < 2:
         raise ValueError("need at least two shares")
+    # seperat the x and y like in(1, 1494)
     x_s, y_s = zip(*shares)
     return _lagrange_interpolate(0, x_s, y_s, prime)
 
