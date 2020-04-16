@@ -53,7 +53,8 @@ p = [
     13466917,
     20996011,
 ]
-
+_shares=10
+_thresh_hold=5
 
 # Mersenne Prime
 _PRIME = 0
@@ -157,7 +158,7 @@ def recover_secret(shares):
 
 
 def enc():
-    global _PRIME
+    global _PRIME, _thresh_hold, _shares
     filename = askopenfilename()
     fi = open(filename, "rb")
     data = fi.read()
@@ -174,8 +175,6 @@ def enc():
                 break
     _PRIME = 2 ** file_size - 1
 
-    _shares = 10
-    _thresh_hold = 5
     shares = make_random_shares(_thresh_hold, _shares, secret)
     try:
         path = os.path.abspath(os.getcwd())
@@ -194,7 +193,7 @@ def enc():
 
 
 def dec():
-    _thresh_hold = 5
+    global _thresh_hold
     filecontent = []
     file = open("shares/size", "r")
     for line in file:
@@ -206,15 +205,15 @@ def dec():
     filename = filecontent[1]
 
     n_shares = _thresh_hold  # Number of files to be read
-    sharese = []
+    shares = []
 
     for i in range(n_shares):
         with open(f"shares/share_{i+1}", "rb") as file:
             file_data = file.read()
-            sharese.append((i + 1, int.from_bytes(file_data, "big")))
+            shares.append((i + 1, int.from_bytes(file_data, "big")))
 
     print("Recovering secret...")
-    secret = recover_secret(sharese[:_thresh_hold])
+    secret = recover_secret(shares[:_thresh_hold])
     with open(os.path.basename(filename), "wb") as file:
         file.write(int.to_bytes(secret, file_size, "big").lstrip(b"\x00"))
     print("DONE!!")
