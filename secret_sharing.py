@@ -9,7 +9,7 @@ See the bottom few lines for usage. Tested on Python 2 and 3.
 from __future__ import division
 from __future__ import print_function
 from tkinter.filedialog import askopenfilename
-import random, functools, os, re
+import random, functools, os, re, timeit
 
 p = [
     2,
@@ -53,9 +53,10 @@ p = [
     13466917,
     20996011,
 ]
-_shares = 10
-_thresh_hold = 5
-
+_shares = 20
+_thresh_hold = 15
+tenc = 0
+tdec = 0
 # Mersenne Prime
 _PRIME = 0
 _RINT = functools.partial(random.SystemRandom().randint, 0)
@@ -159,8 +160,11 @@ def recover_secret(shares):
 
 
 def enc():
-    global _PRIME, _thresh_hold, _shares
+    global _PRIME, _thresh_hold, _shares, tenc
     filename = askopenfilename()
+    # timer start here
+    tstart = timeit.default_timer()
+
     fi = open(filename, "rb")
     data = fi.read()
     secret = int.from_bytes(data, "big")
@@ -174,6 +178,7 @@ def enc():
             if i > file_size * 8:
                 file_size = i
                 break
+
     _PRIME = 2 ** file_size - 1
 
     shares = make_random_shares(_thresh_hold, _shares, secret)
@@ -191,6 +196,9 @@ def enc():
 
     f2 = open(f"shares/size", "w")
     f2.write(f"{file_size}\n{os.path.basename(filename)}")
+    tstop = timeit.default_timer()
+    tenc = tstop - tstart
+    print(f"Time takes for creating shares: {tenc}")
 
 
 def dec():
@@ -220,6 +228,38 @@ def dec():
     print("DONE!!")
 
 
+def timetake():
+    global _shares, _thresh_hold, tdec, tenc
+    filecontent = []
+    try:
+        path = os.path.abspath(os.getcwd())
+        os.mkdir(path + "/time_process")
+    except OSError:
+        print("Creation of the directory %s failed" % path)
+    else:
+        print("Successfully created the directory %s " % path)
+
+    try:
+        file = open("time_process/time.txt", "r")
+        for line in file:
+            filecontent.append(line)
+    except OSError:
+        pass
+
+    _ = open(f"time_process/time.txt", "w")
+    for i in filecontent:
+        _.write(i)
+    _.write(
+        f"--------------------------\nTime taken for {_shares} of Shares: {tenc}\nTime taken for {_thresh_hold} of Thresh Hold: {tdec}\n--------------------------\n\n"
+    )
+
+
 if __name__ == "__main__":
     enc()
+
+    tstart = timeit.default_timer()
     dec()
+    tstop = timeit.default_timer()
+    tdec = tstop - tstart
+    print(f"Time takes for merging: {tdec}")
+    timetake()

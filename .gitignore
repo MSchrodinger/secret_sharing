@@ -7,7 +7,8 @@ _minted-report
 *.out
 *.synctex.gz
 *.toc
-
+shares/
+1Capture.PNG
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

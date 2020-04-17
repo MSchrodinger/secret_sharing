@@ -1,0 +1,25 @@
+--------------------------
+Time taken for 10 of Shares: 0.17790079999940644
+Time taken for 4 of Thresh Hold: 0.03325529999983701
+--------------------------
+
+--------------------------
+Time taken for 15 of Shares: 0.2572203999998237
+Time taken for 4 of Thresh Hold: 0.03842220000024099
+--------------------------
+
+--------------------------
+Time taken for 20 of Shares: 0.2776860999993005
+Time taken for 4 of Thresh Hold: 0.03285820000019157
+--------------------------
+
+--------------------------
+Time taken for 20 of Shares: 0.3015488999999434
+Time taken for 10 of Thresh Hold: 0.054730799999560986
+--------------------------
+
+--------------------------
+Time taken for 20 of Shares: 0.2980805000006512
+Time taken for 15 of Thresh Hold: 0.0662678999997297
+--------------------------
+
