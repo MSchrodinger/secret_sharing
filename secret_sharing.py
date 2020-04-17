@@ -53,8 +53,8 @@ p = [
     13466917,
     20996011,
 ]
-_shares = 30
-_thresh_hold = 20
+_shares = 10
+_thresh_hold = 5
 tenc = 0
 tdec = 0
 Mersenne = 0

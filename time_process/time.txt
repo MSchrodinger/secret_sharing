@@ -64,3 +64,15 @@ Time taken for 20 of Thresh Hold: 0.11042559999987134
 Mersenne Prime: 44497
 --------------------------
 
+--------------------------
+Time taken for 30 of Shares: 0.5900378999995155
+Time taken for 20 of Thresh Hold: 0.1335729000002175
+Mersenne Prime: 44497
+--------------------------
+
+--------------------------
+Time taken for 10 of Shares: 0.301029499998549
+Time taken for 5 of Thresh Hold: 4.247417700000369
+Mersenne Prime: 756839
+--------------------------
+
