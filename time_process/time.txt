@@ -1,26 +1,31 @@
 --------------------------
 Time taken for 10 of Shares: 0.17790079999940644
 Time taken for 4 of Thresh Hold: 0.03325529999983701
+Mersenne Prime: 44497
 --------------------------
 
 --------------------------
 Time taken for 15 of Shares: 0.2572203999998237
 Time taken for 4 of Thresh Hold: 0.03842220000024099
+Mersenne Prime: 44497
 --------------------------
 
 --------------------------
 Time taken for 20 of Shares: 0.2776860999993005
 Time taken for 4 of Thresh Hold: 0.03285820000019157
+Mersenne Prime: 44497
 --------------------------
 
 --------------------------
 Time taken for 20 of Shares: 0.3015488999999434
 Time taken for 10 of Thresh Hold: 0.054730799999560986
+Mersenne Prime: 44497
 --------------------------
 
 --------------------------
 Time taken for 20 of Shares: 0.2980805000006512
 Time taken for 15 of Thresh Hold: 0.0662678999997297
+Mersenne Prime: 44497
 --------------------------
 
 
@@ -28,6 +33,7 @@ here i change the Mersenne Prime to 86243 ↓
 --------------------------
 Time taken for 20 of Shares: 0.3042697999999291
 Time taken for 15 of Thresh Hold: 0.18963259999964066
+Mersenne Prime: 86243
 --------------------------
 
 
@@ -35,17 +41,26 @@ here i change the Mersenne Prime to 1257787 ↓
 --------------------------
 Time taken for 20 of Shares: 0.5039520999998786
 Time taken for 15 of Thresh Hold: 12.738486799999919
+Mersenne Prime: 1257787
 --------------------------
 
 here i change the Mersenne Prime to 1257787 but with diffrent ▬Thresh Hold▬ ↓
 --------------------------
 Time taken for 20 of Shares: 0.49233189999995375
 Time taken for 10 of Thresh Hold: 10.825226299999485
+Mersenne Prime: 1257787
 --------------------------
 
 here i change the Mersenne Prime to 110503 ↓
 --------------------------
 Time taken for 20 of Shares: 0.28485279999949853
 Time taken for 10 of Thresh Hold: 0.23233540000001085
+Mersenne Prime: 110503
+--------------------------
+
+--------------------------
+Time taken for 30 of Shares: 0.41877740000018093
+Time taken for 20 of Thresh Hold: 0.11042559999987134
+Mersenne Prime: 44497
 --------------------------
 

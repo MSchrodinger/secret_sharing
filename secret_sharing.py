@@ -53,10 +53,11 @@ p = [
     13466917,
     20996011,
 ]
-_shares = 20
-_thresh_hold = 10
+_shares = 30
+_thresh_hold = 20
 tenc = 0
 tdec = 0
+Mersenne = 0
 # Mersenne Prime
 _PRIME = 0
 _RINT = functools.partial(random.SystemRandom().randint, 0)
@@ -160,7 +161,7 @@ def recover_secret(shares):
 
 
 def enc():
-    global _PRIME, _thresh_hold, _shares, tenc
+    global _PRIME, _thresh_hold, _shares, tenc, Mersenne
     filename = askopenfilename()
     # timer start here
     tstart = timeit.default_timer()
@@ -178,7 +179,9 @@ def enc():
             if i > file_size * 8:
                 file_size = i
                 break
+
     # file_size = 110503
+    Mersenne = file_size
     _PRIME = 2 ** file_size - 1
 
     shares = make_random_shares(_thresh_hold, _shares, secret)
@@ -229,7 +232,7 @@ def dec():
 
 
 def timetake():
-    global _shares, _thresh_hold, tdec, tenc
+    global _shares, _thresh_hold, tdec, tenc, Mersenne
     filecontent = []
     try:
         path = os.path.abspath(os.getcwd())
@@ -250,7 +253,7 @@ def timetake():
     for i in filecontent:
         _.write(i)
     _.write(
-        f"--------------------------\nTime taken for {_shares} of Shares: {tenc}\nTime taken for {_thresh_hold} of Thresh Hold: {tdec}\n--------------------------\n\n"
+        f"--------------------------\nTime taken for {_shares} of Shares: {tenc}\nTime taken for {_thresh_hold} of Thresh Hold: {tdec}\nMersenne Prime: {Mersenne}\n--------------------------\n\n"
     )
 
 
