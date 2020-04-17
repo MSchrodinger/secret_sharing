@@ -24,3 +24,7 @@ for i in listresult:
 
 print("And so the all the possible for the Secret is:\n\t", end="")
 print(slist)
+
+print(
+    f"\n\nMersenne Prime solve this problem because the main formulafor it will be:\n\tf(x) = S + (A1)x + (A2)x^2 - (Mersenne Prime) × m\n\tm element of N\nAnd finding A1 will be like:\n\tA1 = 448 - 3×(A2) - Mersenne Prime×(M1 - M2)\ninsted of:\n\tA1 = 448 - 3×(A2)"
+)
