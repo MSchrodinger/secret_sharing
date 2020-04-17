@@ -54,7 +54,7 @@ p = [
     20996011,
 ]
 _shares = 20
-_thresh_hold = 15
+_thresh_hold = 10
 tenc = 0
 tdec = 0
 # Mersenne Prime
@@ -178,7 +178,7 @@ def enc():
             if i > file_size * 8:
                 file_size = i
                 break
-
+    # file_size = 110503
     _PRIME = 2 ** file_size - 1
 
     shares = make_random_shares(_thresh_hold, _shares, secret)
@@ -202,7 +202,7 @@ def enc():
 
 
 def dec():
-    global _thresh_hold
+    global _thresh_hold, _PRIME
     filecontent = []
     file = open("shares/size", "r")
     for line in file:
@@ -210,7 +210,7 @@ def dec():
 
     print(filecontent[1])
     file_size = int(filecontent[0])
-
+    _PRIME = 2 ** file_size - 1
     filename = filecontent[1]
 
     n_shares = _thresh_hold  # Number of files to be read
@@ -235,7 +235,7 @@ def timetake():
         path = os.path.abspath(os.getcwd())
         os.mkdir(path + "/time_process")
     except OSError:
-        print("Creation of the directory %s failed" % path)
+        pass
     else:
         print("Successfully created the directory %s " % path)
 

@@ -23,3 +23,29 @@ Time taken for 20 of Shares: 0.2980805000006512
 Time taken for 15 of Thresh Hold: 0.0662678999997297
 --------------------------
 
+
+here i change the Mersenne Prime to 86243 ↓
+--------------------------
+Time taken for 20 of Shares: 0.3042697999999291
+Time taken for 15 of Thresh Hold: 0.18963259999964066
+--------------------------
+
+
+here i change the Mersenne Prime to 1257787 ↓
+--------------------------
+Time taken for 20 of Shares: 0.5039520999998786
+Time taken for 15 of Thresh Hold: 12.738486799999919
+--------------------------
+
+here i change the Mersenne Prime to 1257787 but with diffrent ▬Thresh Hold▬ ↓
+--------------------------
+Time taken for 20 of Shares: 0.49233189999995375
+Time taken for 10 of Thresh Hold: 10.825226299999485
+--------------------------
+
+here i change the Mersenne Prime to 110503 ↓
+--------------------------
+Time taken for 20 of Shares: 0.28485279999949853
+Time taken for 10 of Thresh Hold: 0.23233540000001085
+--------------------------
+
